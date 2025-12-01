@@ -27,6 +27,7 @@ import * as verses from './verses/index.js';
 // Achievement System
 export const ACHIEVEMENT_TIERS = achievements.ACHIEVEMENT_TIERS;
 export const ACHIEVEMENTS = achievements.ACHIEVEMENTS;
+export const ACHIEVEMENT_CONDITIONS = achievements.ACHIEVEMENT_CONDITIONS;
 export const checkForNewAchievements = achievements.checkForNewAchievements;
 
 // Point Economy
@@ -77,6 +78,7 @@ export default {
   // Achievements
   ACHIEVEMENT_TIERS,
   ACHIEVEMENTS,
+  ACHIEVEMENT_CONDITIONS,
   checkForNewAchievements,
 
   // Points

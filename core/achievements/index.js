@@ -4,8 +4,11 @@
  * Keep this in a private submodule to prevent cloning.
  */
 
-import ACHIEVEMENT_NAME_BANK from '../../data/sword_drill_achievements/achievements.json';
-import ACHIEVEMENT_CONDITIONS from '../../data/sword_drill_achievements/achievement_conditions.json';
+import ACHIEVEMENT_NAME_BANK from '../../../data/sword_drill_achievements/achievements.json';
+import ACHIEVEMENT_CONDITIONS_RAW from '../../../data/sword_drill_achievements/achievement_conditions.json';
+
+// Export achievement conditions for use in UI
+export const ACHIEVEMENT_CONDITIONS = ACHIEVEMENT_CONDITIONS_RAW;
 
 // Achievement tier configuration
 export const ACHIEVEMENT_TIERS = {
@@ -27,7 +30,7 @@ const parseAchievementEntry = (raw, fallbackName) => {
 
 // Build ACHIEVEMENTS from achievement_conditions.json
 export const ACHIEVEMENTS = Object.fromEntries(
-  Object.entries(ACHIEVEMENT_CONDITIONS).map(([tier, achievements]) => {
+  Object.entries(ACHIEVEMENT_CONDITIONS_RAW).map(([tier, achievements]) => {
     return [
       tier,
       Object.entries(achievements).map(([id, condition]) => {
@@ -99,5 +102,6 @@ export const checkForNewAchievements = (userData) => {
 export default {
   ACHIEVEMENT_TIERS,
   ACHIEVEMENTS,
+  ACHIEVEMENT_CONDITIONS,
   checkForNewAchievements
 };
