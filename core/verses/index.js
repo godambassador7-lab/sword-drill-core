@@ -5,6 +5,7 @@
  */
 
 import { DAILY_VERSES_POOL } from '../../dailyVerses';
+import { MOTIVATIONAL_VERSES_365 } from '../../../data/motivationalVerses365';
 
 // Default fallback verse
 export const DEFAULT_VERSE_FALLBACK = {
@@ -15,7 +16,9 @@ export const DEFAULT_VERSE_FALLBACK = {
 };
 
 // Verse database for daily rotation
-export const VERSE_DATABASE = DAILY_VERSES_POOL;
+export const VERSE_DATABASE = MOTIVATIONAL_VERSES_365 && Array.isArray(MOTIVATIONAL_VERSES_365) && MOTIVATIONAL_VERSES_365.length > 0
+  ? MOTIVATIONAL_VERSES_365
+  : DAILY_VERSES_POOL;
 
 /**
  * Get verse of the day based on current date
@@ -31,7 +34,7 @@ export const getDailyVerse = (date = new Date()) => {
     const oneDay = 1000 * 60 * 60 * 24;
     const dayOfYear = Math.floor(diff / oneDay);
 
-    // Select verse based on day of year (cycles through pool)
+    // Select verse based on day of year (cycles through 365-day curated pool)
     const verseIndex = dayOfYear % VERSE_DATABASE.length;
     return VERSE_DATABASE[verseIndex] || DEFAULT_VERSE_FALLBACK;
   } catch (error) {
