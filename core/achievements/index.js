@@ -87,6 +87,12 @@ export const checkForNewAchievements = (userData) => {
       case 'points':
         shouldUnlock = userData.totalPoints >= achievement.value;
         break;
+      case 'biblical_or_nah_completed':
+        shouldUnlock = userData.biblicalOrNahStats?.gamesPlayed >= achievement.value;
+        break;
+      case 'biblical_or_nah_correct':
+        shouldUnlock = userData.biblicalOrNahStats?.totalCorrect >= achievement.value;
+        break;
       default:
         break;
     }
