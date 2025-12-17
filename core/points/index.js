@@ -8,13 +8,13 @@
 export const POINT_SYSTEM = {
   // Base points for quiz types (multiplied by difficulty multiplier)
   BASE_QUIZ_POINTS: {
-    'fill-blank': 15,
-    'multiple-choice': 5,
-    'reference-recall': 10,
-    'verse-scramble': 20,
-    'book-order': 25,
-    'sword-drill-ultimate': 50,
-    'verse-detective': 30,
+    'fill-blank': 8,
+    'multiple-choice': 3,
+    'reference-recall': 5,
+    'verse-scramble': 10,
+    'book-order': 13,
+    'sword-drill-ultimate': 25,
+    'verse-detective': 15,
   },
 
   // Difficulty multipliers based on user level
@@ -43,33 +43,33 @@ export const POINT_SYSTEM = {
 
   // Bonus points
   BONUSES: {
-    verseOfDayChecked: 10,
-    dailyStreakMaintained: 5, // Per day in streak
-    firstQuizOfDay: 20,
-    perfectQuiz: 50, // All answers correct in session
-    speedBonus: 25, // Completed quickly
-    bonusTrivia: 30, // Base bonus points per correct trivia answer
-    courseLesson: 100,
-    courseLevel: 500,
-    courseComplete: 1500,
-    planMilestone: 200,
-    planComplete: 800,
-    achievement: 150,
+    verseOfDayChecked: 5,
+    dailyStreakMaintained: 3, // Per day in streak
+    firstQuizOfDay: 10,
+    perfectQuiz: 25, // All answers correct in session
+    speedBonus: 13, // Completed quickly
+    bonusTrivia: 15, // Base bonus points per correct trivia answer
+    courseLesson: 50,
+    courseLevel: 250,
+    courseComplete: 750,
+    planMilestone: 100,
+    planComplete: 400,
+    achievement: 75,
   },
 
   // Point penalties (incorrectAnswer scales by difficulty level)
   PENALTIES: {
     incorrectAnswer: {
-      Beginner: -10,
-      Intermediate: -20,
-      Advanced: -35,
-      Elite: -50
+      Beginner: -5,
+      Intermediate: -10,
+      Advanced: -18,
+      Elite: -25
     },
-    streakBroken: -50,
-    inactiveDay: -10, // Per day inactive (max 7 days)
-    quizFailed: -20,
-    tooFastAnswer: -10, // Answered too quickly (likely guessing)
-    repeatedMistake: -8, // Missing the same verse/question multiple times
+    streakBroken: -25,
+    inactiveDay: -5, // Per day inactive (max 7 days)
+    quizFailed: -10,
+    tooFastAnswer: -5, // Answered too quickly (likely guessing)
+    repeatedMistake: -4, // Missing the same verse/question multiple times
   },
 
   // Time thresholds (in seconds)
@@ -86,13 +86,13 @@ export const POINT_SYSTEM = {
 
   // Point spending options
   SHOP_ITEMS: {
-    unlockApocrypha: 1000,
-    customTheme: 500,
-    skipDifficulty: 300,
-    extraHint: 100,
-    streakFreeze: 200, // Protect streak for 1 day
-    doublePoints: 400, // 2x points for next quiz
-    revealAnswer: 50,
+    unlockApocrypha: 500,
+    customTheme: 250,
+    skipDifficulty: 150,
+    extraHint: 50,
+    streakFreeze: 100, // Protect streak for 1 day
+    doublePoints: 200, // 2x points for next quiz
+    revealAnswer: 25,
   },
 
   // Difficulty tweaks based on level
